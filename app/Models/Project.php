@@ -14,6 +14,8 @@ class Project extends Model
         'deskripsi',
         'status',
         'client_id',
+        'latitude',
+        'longitude',
     ];
 
     // Mendefinisikan bahwa sebuah Proyek "milik" satu Klien

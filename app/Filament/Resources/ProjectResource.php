@@ -49,6 +49,14 @@ class ProjectResource extends Resource
                     ])
                     ->required(),
 
+                TextInput::make('latitude')
+                    ->numeric()
+                    ->nullable(),
+
+                TextInput::make('longitude')
+                    ->numeric()
+                    ->nullable(),
+
                 Textarea::make('deskripsi')
                     ->columnSpanFull(),
             ]);
