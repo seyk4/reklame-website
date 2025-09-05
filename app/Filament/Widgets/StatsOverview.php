@@ -4,13 +4,17 @@ namespace App\Filament\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
-use App\Models\Client; // Import model Client
-use App\Models\Project; // Import model Project
+use Illuminate\Support\Facades\DB;
+use App\Models\Client;
+use App\Models\Project;
 
 class StatsOverview extends BaseWidget
 {
     protected function getStats(): array
     {
+        $projectStats = Project::select('status', DB::raw('count(*) as count'))
+                               ->groupBy('status')
+                               ->pluck('count', 'status');
         return [
             // Kartu Statistik #1: Total Klien dan Proyek
             Stat::make('Total Klien', Client::count())
