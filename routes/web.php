@@ -13,3 +13,6 @@ Route::get('/', [PublicController::class, 'map'])->name('home');
 Route::get('/peta-reklame', [PublicController::class, 'map'])->name('reklame.map');
 Route::get('/reklame/{project}', [PublicController::class, 'show'])->name('reklame.show');
 Route::post('/booking', [PublicController::class, 'storeBooking'])->name('booking.store');
+
+Route::get('/upload-ar', [PublicController::class, 'showArUpload'])->name('reklame.ar.upload');
+Route::get('/ar-viewer', [PublicController::class, 'showArViewer'])->name('reklame.ar.viewer');

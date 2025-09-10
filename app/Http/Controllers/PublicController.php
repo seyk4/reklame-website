@@ -42,4 +42,14 @@ class PublicController extends Controller
         // 3. Kembalikan pengguna ke halaman sebelumnya dengan pesan sukses
         return back()->with('success', 'Pengajuan Anda telah terkirim! Tim kami akan segera menghubungi Anda.');
     }
+
+    public function showArUpload()
+    {
+        return view('public.upload-ar');
+    }
+
+    public function showArViewer()
+    {
+        return view('public.ar-viewer');
+    }
 }
